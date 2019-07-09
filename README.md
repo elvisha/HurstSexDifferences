@@ -7,7 +7,7 @@ Full paper currently in preparation.
 
 Keywords: fMRI, resting-state fMRI, hurst exponent, temporal dependence, temporal dynamics, sex classification, sex differences, 
 
-This implementation is catered to the HCP-S1200 dataset where we focus on: 
+This MATLAB and Python based implementation is catered to the HCP-S1200 dataset where we focus on: 
 (1) computation of hurst exponent (measure of long-term temporal dependence) from resting-state fMRI data using multiple parcellations (atlases)
 (2) statistical analysis of sex differences at an ROI-level using different parcellations
 (3) machine learning sex classification using hurst exponent data using different parcellations

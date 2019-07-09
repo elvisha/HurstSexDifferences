@@ -1,4 +1,4 @@
-#HurstSexDifferences
+# HurstSexDifferences
 Sex differences in long-term temporal dependence of rs-fMRI time series
 
 This repository contains all of the MATLAB and Python based implementation of the work described in: 

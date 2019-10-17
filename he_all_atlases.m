@@ -1,6 +1,8 @@
 function he_all_atlases(subject,fmriname)
 
-%read in time series data
+%read in time series data for each of the HCP subjects 
+%subject is a string containing the subject ID 
+%fmriname is a string containing the fmri name (i.e. rfMRI_REST1_LR)
 V=read_avw_img(sprintf('%s_hp2000_clean',fmriname));
 V1=reshape(V,[],size(V,4));
 

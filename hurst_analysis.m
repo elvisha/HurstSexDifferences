@@ -5,8 +5,11 @@ function hurst_analysis(start_seg,end_seg)
 start_seg=start_seg;
 end_seg=end_seg;
 
-%compute hurst mean across segments from rfMRI_REST1_LR for all atlases
-load('rfMRI_REST1_LR_hurst.mat')
+%compute hurst mean across segments from scan 1 for all atlases
+%mat file for each scan contains the HE data for all subjects and atlases for that scan
+%HE data is saved as a matrix for each atlas (i.e. he_aal) which is nxm where n is 
+%number of subjects and m is number of regions
+load('scan1_hurst.mat')
 he_aal_1LR = he_mean_across_segments(he_aal, start_seg, end_seg);
 he_ez_1LR = he_mean_across_segments(he_ez, start_seg, end_seg);
 he_ho_1LR = he_mean_across_segments(he_ho, start_seg, end_seg);
@@ -16,8 +19,8 @@ he_fs86_1LR = he_mean_across_segments(he_fs86, start_seg, end_seg);
 he_tt_1LR = he_mean_across_segments(he_tt, start_seg, end_seg);
 clear he_aal he_cc200 he_cc400 he_ez he_ho he_tt fmriname subj_str i;
 
-%compute hurst mean across segments from rfMRI_REST1_RL for all atlases
-load('rfMRI_REST1_RL_hurst.mat')
+%compute hurst mean across segments from scan 2 for all atlases
+load('scan2_hurst.mat')
 he_aal_1RL = he_mean_across_segments(he_aal, start_seg, end_seg);
 he_ez_1RL = he_mean_across_segments(he_ez, start_seg, end_seg);
 he_ho_1RL = he_mean_across_segments(he_ho, start_seg, end_seg);
@@ -27,8 +30,8 @@ he_fs86_1RL = he_mean_across_segments(he_fs86, start_seg, end_seg);
 he_tt_1RL = he_mean_across_segments(he_tt, start_seg, end_seg);
 clear he_aal he_cc200 he_cc400 he_ez he_ho he_tt fmriname subj_str i;
 
-%compute hurst mean across segments from rfMRI_REST2_LR for all atlases
-load('rfMRI_REST2_LR_hurst.mat')
+%compute hurst mean across segments from scan 3 for all atlases
+load('scan3_hurst.mat')
 he_aal_2LR = he_mean_across_segments(he_aal, start_seg, end_seg);
 he_ez_2LR = he_mean_across_segments(he_ez, start_seg, end_seg);
 he_ho_2LR = he_mean_across_segments(he_ho, start_seg, end_seg);
@@ -38,8 +41,8 @@ he_fs86_2LR = he_mean_across_segments(he_fs86, start_seg, end_seg);
 he_tt_2LR = he_mean_across_segments(he_tt, start_seg, end_seg);
 clear he_aal he_cc200 he_cc400 he_ez he_ho he_tt fmriname subj_str i;
 
-%compute hurst mean across segments from rfMRI_REST2_RL for all atlases
-load('rfMRI_REST2_RL_hurst.mat')
+%compute hurst mean across segments from scan 4 for all atlases
+load('scan4_hurst.mat')
 he_aal_2RL = he_mean_across_segments(he_aal, start_seg, end_seg);
 he_ez_2RL = he_mean_across_segments(he_ez, start_seg, end_seg);
 he_ho_2RL = he_mean_across_segments(he_ho, start_seg, end_seg);
@@ -81,6 +84,6 @@ subj_sex=load('subj_sex.txt');
 [p_corr, aal_p_corr, cc200_p_corr, cc400_p_corr, ez_p_corr, fs86_p_corr, ho_p_corr, tt_p_corr]=p_correction(aal_p, cc200_p, cc400_p, ez_p, fs86_p, ho_p, tt_p);
 
 %save files
-save(sprintf('hurst_analysis_%d_%d_bhfdr.mat', start_seg, end_seg));
+save(sprintf('hurst_analysis.mat', start_seg, end_seg));
 end
 
